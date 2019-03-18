@@ -13,39 +13,40 @@ int _putchar(char c)
 
 int _printchar(va_list ap)
 {
-	char c = va_arg(ap, unsigned int);
-	_putchar(c);
+	_putchar(va_arg(ap, int));
 	return (1);
 }
 
 int _printstring(va_list ap)
 {
-	int counter = 0;
-
 	char *s = va_arg(ap, char *);
-	while (s != '\0')
+	int i = 0;
+	if (s == NULL)
+	s = "(null)";
+	while (s[i] != '\0')
 	{
-		_putchar(*s);
-		counter++;
-		s++;
+		_putchar(s[i]);
+		i++;
 	}
-	return (counter);
+	return (i);
 }
 
 int _printint(va_list ap)
 {
-	int n = va_arg(ap, int);
+	 int n = va_arg(ap, int);
 	unsigned int u;
 	int answer = 0;
 	int counter = 0;
 	int divisor = 1000000000;
+
 	if (n < 0)
 	{
 		counter += _putchar('-');
-		u = -n;
+		u = -(n);
 	}
-	while (answer != 0)
+	while (answer == 0)
 	{
+		answer = n / divisor;
 		divisor = divisor / 10;
 	}
 	while(divisor >= 1)

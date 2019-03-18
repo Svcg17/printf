@@ -16,7 +16,30 @@ int _printf(const char *format, ...)
 	va_list ap;
 
 	va_start(ap, format);
-	i = 0;
+
+	for (i = 0; format[i] != '\0'; i++)
+	{
+		if (format[i] != '%')
+		{
+			_putchar(format[i]);
+			counter++;
+		}
+		else
+		{
+			for (j = 0; types[j].type != NULL; j++)
+			{
+				if (format[i + 1] == *types[j].type)
+					counter += types[j].func(ap);
+			}
+			i++;
+		}
+	}
+	va_end(ap);
+	printf("%i\n", counter);
+	return (counter);
+}
+
+/**
 	while (format[i] != '\0')
 	{
 		if (format[i] != '%')
@@ -40,3 +63,4 @@ int _printf(const char *format, ...)
 	return counter;
 	va_end(ap);
 }
+*/
