@@ -19,16 +19,14 @@ int _printf(const char *format, ...)
 	va_list ap;
 
 	va_start(ap, format);
-	if (format == NULL)
+	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
 	for (i = 0; format[i] != '\0'; i++)
 	{
 		if (format[i] != '%')
 			counter += _putchar(format[i]);
 		else if (format[i + 1] == '%')
-		{
 			counter += _putchar('%') && i++;
-		}
 		else if (format[i + 1] != 'c' && format[i + 1] != 's'
 			 && format[i + 1] != 'i' && format[i + 1] != 'd')
 		{
