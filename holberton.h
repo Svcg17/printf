@@ -12,9 +12,10 @@
  */
 typedef struct datatype
 {
-        char *type;
-        int (*func)(va_list list);
-}data_t;
+	char *type;
+	int (*func)(va_list list);
+} data_t;
+
 int _putchar(char c);
 int _printchar(va_list ap);
 int _printstring(va_list ap);
