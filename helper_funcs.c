@@ -45,6 +45,24 @@ void _printnum(int n)
 	_putchar(m % 10 + '0');
 }
 /**
+ * _getcount - function that counts the length of an integer.
+ * @n: integer to be counted.
+ * Return: lenght of integer.
+ */
+int _getcount(int n)
+{
+	int counter = 0;
+	unsigned int m = n;
+
+	while (m > 0)
+	{
+		m = m / 10;
+		counter++;
+	}
+	return (counter);
+}
+
+/**
  * _printint - function that prints an integer with helper function.
  * @ap: The string to print, argument pointer
  *
@@ -65,22 +83,5 @@ int _printint(va_list ap)
 		counter++;
 	counter += _getcount(n);
 	_printnum(n);
-	return (counter);
-}
-/**
- * _getcount - function that counts the length of an integer.
- * @n: integer to be counted.
- * Return: lenght of integer.
- */
-int _getcount(int n)
-{
-	int counter = 0;
-	unsigned int m = n;
-
-	while (m > 0)
-	{
-		m = m / 10;
-		counter++;
-	}
 	return (counter);
 }
