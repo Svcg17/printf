@@ -3,7 +3,7 @@
 _printf is a collection of C files that when compiled and executed,
 produces output according to a format.
 ### Prototype of _printf function
-int _printf(const char *format, ...);
+`int _printf(const char *format, ...);`
 Returns: the number of characters printed (excluding the null byte used to end output to strings)
 ### Usage
 - Include `holberton.h`
@@ -24,8 +24,8 @@ Format Specifier | Description | Function name
 - `_printf("%c", 'd')` *prints the character `d`*
 - `_printf("%s", "Hello, world\n")` *prints "Hello, world", followed by a new	line*
 - `_printf("%%")` *prints the character `%`*
-- `_printf("%i", '415')` *prints the integer 415*
-- `_printf("%d", '808')` *prints the decimal number 808*
+- `_printf("%i", 415)` *prints 415 (signed decimal notation)*
+- `_printf("%d", 808)` *prints 808 (signed decimal notation)*
 ### Files
 File Name | Description
 -- | --
