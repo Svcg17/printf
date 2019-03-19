@@ -12,9 +12,7 @@ int _printf(const char *format, ...)
 		{"c", _printchar},
 		{"s", _printstring},
 		{"i", _printint},
-		{"d", _printint},
-		{NULL, NULL}
-	};
+		{"d", _printint}};
 	int i, j, counter = 0;
 	va_list ap;
 
@@ -26,7 +24,10 @@ int _printf(const char *format, ...)
 		if (format[i] != '%')
 			counter += _putchar(format[i]);
 		else if (format[i + 1] == '%')
-			counter += _putchar('%') && i++;
+		{
+			counter += _putchar('%');
+				i++;
+		}
 		else if (format[i + 1] != 'c' && format[i + 1] != 's'
 			 && format[i + 1] != 'i' && format[i + 1] != 'd')
 		{
@@ -36,7 +37,7 @@ int _printf(const char *format, ...)
 		}
 		else
 		{
-			for (j = 0; types[j].type != NULL; j++)
+			for (j = 0; j < 4; j++)
 			{
 				if (format[i + 1] == *types[j].type)
 					counter += types[j].func(ap);
