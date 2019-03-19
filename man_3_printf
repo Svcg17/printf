@@ -1,0 +1,56 @@
+.TH _PRINTF 1 "19 Mar 2019" "1.00" "_printf man page"
+.SH NAME
+\fB_printf\fR\- print data according to specified format.
+.SH SYNOPSIS
+#include <stdarg.h>
+
+#include <unistd.h>
+
+#include <stdio.h>
+
+#include <stdlib.g>
+
+\fBint _printf(const char *\fR\fIformat\fR\fB, ...);\fR
+
+.SH DESCRIPTION
+Printf project made for Holberton School.
+\fB_printf()\fR receives the format argument as a string of characters and prints to standard output based on the arguments followed after it. Bellow are the specifiers that convert those arguments to be printed.
+
+.SH CONVERSION SPECIFIERS
+The following characters act as specifiers for conversions to be made:
+.IP c
+Arguments of type \fIint\fR are converted to type \fIchar\fR and printed to standard output.
+.IP s
+Arguments of type \fIconst char *\fR are expected to be a pointer to an array of type char. All characters from the array except for the terminating null byte are printed to the standard output.
+.IP d,i
+Arguments of type \fIint\fR are converted to signed decimal numbers.
+.IP %
+No argument conversion, the character '%' is printed.
+
+.SH RETURN VALUE
+On success the number of characters to be printed are returned, excluding the terminating null byte from strings.
+Return -1 if NULL or only '%' is passed.
+If NULL is passed as argument in a string print (null).
+
+.SH EXAMPLE
+
+int main(void)
+
+{
+
+	int len = _printf("Holberton");
+
+	_printf("length of \\"Holberton\\" is %d", len);
+
+	return (0);
+
+}
+
+.SH CODE STYLE
+Betty Style
+
+.SH SEE ALSO
+.I printf(3), stdarg(3)
+
+.SH AUTHOR
+Sofia Cheung, David Kwan.
