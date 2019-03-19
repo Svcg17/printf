@@ -1,16 +1,5 @@
 #include "holberton.h"
 /**
- * _putchar - writes the character c to stdout
- * @c: The character to print
- *
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
- */
-int _putchar(char c)
-{
-	return (write(1, &c, 1));
-}
-/**
  * _printchar - prints a character
  * @ap: The character to print, argument pointer
  *
@@ -42,34 +31,56 @@ int _printstring(va_list ap)
 	return (i);
 }
 /**
- * _printint - prints an integer
+ * _printnum - function that prints an integer
+ * @n: integer to be printed by function.
+ */
+void _printnum(int n)
+{
+	unsigned int m = n;
+
+	if (m / 10 != 0)
+	{
+		_printnum(m / 10);
+	}
+	_putchar(m % 10 + '0');
+}
+/**
+ * _printint - function that prints an integer with helper function.
  * @ap: The string to print, argument pointer
  *
  * Return: counter
  */
 int _printint(va_list ap)
 {
-	 int n = va_arg(ap, int);
-	unsigned int u;
-	int answer = 0;
 	int counter = 0;
-	int divisor = 1000000000;
+	int n = va_arg(ap, int);
 
 	if (n < 0)
 	{
-		counter += _putchar('-');
-		u = -(n);
+		n = -(n);
+		_putchar('-');
+		counter++;
 	}
-	while (answer == 0)
+	if (n == 0)
+		counter++;
+	counter += _getcount(n);
+	_printnum(n);
+	return (counter);
+}
+/**
+ * _getcount - function that counts the length of an integer.
+ * @n: integer to be counted.
+ * Return: lenght of integer.
+ */
+int _getcount(int n)
+{
+	int counter = 0;
+	unsigned int m = n;
+
+	while (m > 0)
 	{
-		answer = n / divisor;
-		divisor = divisor / 10;
-	}
-	while (divisor >= 1)
-	{
-		counter += _putchar(answer);
-		answer = u / divisor;
-		divisor = divisor / 10;
+		m = m / 10;
+		counter++;
 	}
 	return (counter);
 }
