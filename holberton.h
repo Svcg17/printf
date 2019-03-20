@@ -22,5 +22,6 @@ int _printstring(va_list ap);
 int _printint(va_list ap);
 int _printf(const char *format, ...);
 int _rot13(va_list ap);
-
+int _printrev(va_list ap);
+int _strlen(char *s);
 #endif /* HOLBERTON_H */
