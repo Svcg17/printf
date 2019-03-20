@@ -20,18 +20,21 @@ Format Specifier | Description | Function name
 `%s` | Prints a string | `_printstring`
 `%%` | Prints a percent | `_printf`
 `%i` & `%d` | Prints a number | `_printint`
+`%R`| Prints a rot13'ed string | `_rot13`
 ### Example Usage
 - `_printf("%c", 'd')` *prints the character `d`*
 - `_printf("%s", "Hello, world\n")` *prints "Hello, world", followed by a new	line*
 - `_printf("%%")` *prints the character `%`*
 - `_printf("%i", 415)` *prints 415 (signed decimal notation)*
 - `_printf("%d", 808)` *prints 808 (signed decimal notation)*
+- `_printf("%R", "Hello\n")` *prints "Uryyb", followed by a new line*
 ### Files
 File Name | Description
 -- | --
 `_printf.c` | produces output according to a format
 `helper_funcs.c` | File containing functions for specifiers
 `_putchar.c` | File containing function that writes a char to stdout
+`_more_funcs.c`  | File containing functions for more specifiers
 `holberton.h` | Header file with function prototypes and struct for specifiers
 ### About
 Created on `Ubuntu 14.04 LTS`. Compiled with `gcc 4.8.4`, using flags: `-Wall -Werror -Wextra and -pedantic`
