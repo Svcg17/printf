@@ -26,6 +26,8 @@ Arguments of type \fIconst char *\fR are expected to be a pointer to an array of
 Arguments of type \fIint\fR are converted to signed decimal numbers.
 .IP %
 No argument conversion, the character '%' is printed.
+.IP R
+String argument is printed in rot13.
 
 .SH RETURN VALUE
 On success the number of characters to be printed are returned, excluding the terminating null byte from strings.
