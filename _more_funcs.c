@@ -34,36 +34,3 @@ int _rot13(va_list ap)
 	}
 	return (counter);
 }
-/**
- * _strlen - returns the length of a string
- * @s: pointer to string
- *
- * Return: The length of the string
- */
-int _strlen(char *s)
-{
-	int c = 0;
-
-	while (s[c] != '\0')
-		c++;
-	return (c);
-}
-
-/**
- * _printrev - prints a string, in reverse
- * @ap: argument pointer
- *
- * Return: the counter of the string
- */
-int _printrev(va_list ap)
-{
-	char *s = va_arg(ap, char *);
-	int c;
-	int len = _strlen(s);
-
-	if (s == NULL)
-		s = "(null)";
-	for (c = len - 1; c >= 0; c--)
-		_putchar(s[c]);
-	return (len - 1);
-}

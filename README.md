@@ -36,6 +36,7 @@ File Name | Description
 `_putchar.c` | File containing function that writes a char to stdout
 `_more_funcs.c`  | File containing functions for more specifiers
 `holberton.h` | Header file with function prototypes and struct for specifiers
+
 ### About
 Created on `Ubuntu 14.04 LTS`. Compiled with `gcc 4.8.4`, using flags: `-Wall -Werror -Wextra and -pedantic`
 ### Authors
