@@ -9,7 +9,7 @@ Returns: the number of characters printed (excluding the null byte used to end o
 - Include `holberton.h`
 - Call _printf, passing a formatted string with any format specifiers and
   optional arguments
-- Upon success, it writes desired output to stdout and returns 0
+- Upon success, it writes desired output to stdout
 - Upon error, it returns -1
 - If NULL is passed in as a string argument, it prints `(null)`
 
