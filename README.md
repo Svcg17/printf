@@ -32,7 +32,7 @@ File Name | Description
 `_printf.c` | produces output according to a format
 `helper_funcs.c` | File containing functions for specifiers
 `_putchar.c` | File containing function that writes a char to stdout
-`holberton.h` | Header file with function prototypes and struct for specifiers
+`holberton.h` | Header file with function prototypes and structure for specifiers
 ### About
 Created on `Ubuntu 14.04 LTS`. Compiled with `gcc 4.8.4`, using flags: `-Wall -Werror -Wextra and -pedantic`
 ### Authors
