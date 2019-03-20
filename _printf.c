@@ -10,7 +10,7 @@ int _printf(const char *format, ...)
 {
 	data_t types[] = {
 		{"c", _printchar}, {"s", _printstring}, {"i", _printint},
-		{"R", _rot13}, {"d", _printint}};
+		{"R", _rot13}, {"d", _printint}, {"r", _printrev}};
 	int i, j, counter = 0;
 	va_list ap;
 
@@ -28,7 +28,7 @@ int _printf(const char *format, ...)
 		}
 		else if (format[i + 1] != 'c' && format[i + 1] != 's'
 			 && format[i + 1] != 'i' && format[i + 1] != 'd'
-			 && format[i + 1] != 'R')
+			 && format[i + 1] != 'R' && format[i + 1] != 'r')
 		{
 			counter += _putchar('%');
 			counter += _putchar(format[i + 1]);
@@ -36,7 +36,7 @@ int _printf(const char *format, ...)
 		}
 		else
 		{
-			for (j = 0; j < 5; j++)
+			for (j = 0; j < 6; j++)
 				if (format[i + 1] == *types[j].type)
 					counter += types[j].func(ap);
 			i++;

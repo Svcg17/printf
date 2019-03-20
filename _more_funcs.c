@@ -34,3 +34,22 @@ int _rot13(va_list ap)
 	}
 	return (counter);
 }
+/**
+ * print_rev - prints a string, in reverse, followed by a new line
+ * @s: pointer to string
+ */
+int _printrev(va_list ap)
+{
+
+	char* s = va_arg(ap, char*);
+	int c;
+	int i = 0;
+
+	if (s == NULL)
+		s = "(null)";
+	while (s[i] != '\0')
+		i++;
+	for (c = i; c >= 0; c--)
+		_putchar(s[c]);
+	return (i);
+}
