@@ -35,13 +35,15 @@ int _rot13(va_list ap)
 	return (counter);
 }
 /**
- * print_rev - prints a string, in reverse, followed by a new line
- * @s: pointer to string
+ * _printrev - prints a string, in reverse
+ * @ap: argument pointer to take arguments from
+ *
+ * Return: the counter of the string
  */
 int _printrev(va_list ap)
 {
 
-	char* s = va_arg(ap, char*);
+	char *s = va_arg(ap, char*);
 	int c;
 	int i = 0;
 
